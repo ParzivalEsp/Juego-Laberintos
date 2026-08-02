@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reseña</title>
+
+<style>
+body{
+    margin:0;
+    background:#000;
+    color:white;
+    font-family:Arial,sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+#contenido{
+    text-align:center;
+}
+
+h1{
+    margin-bottom:30px;
+}
+
+.stars{
+    direction:rtl;
+    display:inline-flex;
+}
+
+.stars input{
+    display:none;
+}
+
+.stars label{
+    font-size:60px;
+    color:gray;
+    cursor:pointer;
+    user-select:none;
+    transition:.2s;
+}
+
+.stars label:hover,
+.stars label:hover ~ label,
+.stars input:checked ~ label{
+    color:gold;
+}
+
+button{
+    display:block;
+    margin:30px auto 0;
+    padding:12px 35px;
+    font-size:20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="contenido">
+
+<h1>¿Cómo ha sido tu experiencia?</h1>
+
+<div class="stars">
+
+<input type="radio" id="star5" name="rating">
+<label for="star5">★</label>
+
+<input type="radio" id="star4" name="rating">
+<label for="star4">★</label>
+
+<input type="radio" id="star3" name="rating">
+<label for="star3">★</label>
+
+<input type="radio" id="star2" name="rating">
+<label for="star2">★</label>
+
+<input type="radio" id="star1" name="rating">
+<label for="star1">★</label>
+
+</div>
+
+<button id="enviar">Enviar</button>
+
+</div>
+
+<script>
+document.getElementById("enviar").onclick = function(){
+
+document.body.innerHTML = `
+<div style="
+background:black;
+color:white;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Arial,sans-serif;
+font-size:45px;
+text-align:center;">
+¡Gracias por tu reseña!
+</div>
+`;
+
+};
+</script>
+
+</body>
+</html>
